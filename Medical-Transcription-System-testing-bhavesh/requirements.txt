@@ -1,0 +1,14 @@
+torch
+scipy
+numpy
+pandas
+scikit-learn
+scispacy
+spacypip 
+nltk
+transformers
+jsonschema
+flask
+pytest
+pydantic
+openai

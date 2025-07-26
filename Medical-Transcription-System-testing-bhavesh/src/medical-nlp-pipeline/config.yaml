@@ -1,0 +1,24 @@
+pipeline:
+  entity_recognition:
+    model: "en_core_web_sm"
+    use_terminology_resolvers: true
+    use_llm_guided_mapping: true
+    multi_agent_verification: true
+
+  knowledge_graph:
+    enable_graph_construction: true
+    validation_enabled: true
+    graph_type: "context-aware"
+
+  llm:
+    model_name: "google/flan-t5-base"
+    use_llm_for_mapping: true
+    prompt_template: "Fix ONLY clearly misspelled medical terms in this text. Preserve all other text exactly."
+
+  logging:
+    level: "INFO"
+    log_file: "logs/pipeline.log"
+
+  output:
+    save_results: true
+    results_directory: "results"

@@ -1,0 +1,50 @@
+{
+  "templates": {
+    "SOAP": {
+      "Subjective": {
+        "chief_complaint": "",
+        "history_of_present_illness": "",
+        "review_of_systems": ""
+      },
+      "Objective": {
+        "vital_signs": {
+          "blood_pressure": "",
+          "heart_rate": "",
+          "temperature": ""
+        },
+        "physical_exam": ""
+      },
+      "Assessment": {
+        "diagnoses": []
+      },
+      "Plan": {
+        "medications": [],
+        "follow_up": "",
+        "referrals": []
+      }
+    },
+    "JSON": {
+      "Subjective": {
+        "chief_complaint": "",
+        "history_of_present_illness": "",
+        "review_of_systems": ""
+      },
+      "Objective": {
+        "vital_signs": {
+          "blood_pressure": "",
+          "heart_rate": "",
+          "temperature": ""
+        },
+        "physical_exam": ""
+      },
+      "Assessment": {
+        "diagnoses": []
+      },
+      "Plan": {
+        "medications": [],
+        "follow_up": "",
+        "referrals": []
+      }
+    }
+  }
+}

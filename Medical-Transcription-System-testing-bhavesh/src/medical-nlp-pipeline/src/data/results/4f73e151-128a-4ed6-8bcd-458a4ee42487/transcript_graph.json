@@ -1,0 +1,23 @@
+{
+  "metadata": {
+    "node_count": 1,
+    "edge_count": 0,
+    "timestamp": "2025-07-26T11:55:17.403935",
+    "description": "Medical Knowledge Graph"
+  },
+  "nodes": [
+    {
+      "id": "temporal_today",
+      "text": "today",
+      "start": 18,
+      "end": 23,
+      "entity_type": "TEMPORAL",
+      "method": "spacy",
+      "context": "How are you doing today? I have been having trouble breathing lately. Hav",
+      "preferred_term": "today",
+      "normalized": false,
+      "confidence": 0.7
+    }
+  ],
+  "edges": []
+}

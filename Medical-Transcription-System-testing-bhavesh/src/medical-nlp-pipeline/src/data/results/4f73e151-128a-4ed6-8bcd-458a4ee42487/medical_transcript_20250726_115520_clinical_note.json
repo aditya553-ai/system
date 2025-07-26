@@ -1,0 +1,34 @@
+{
+  "subjective": {
+    "chief_complaint": "Trouble breathing",
+    "history_of_present_illness": "The patient reports a heavy feeling in the chest, particularly noted during exercise. The patient denies any recent colds or known allergies."
+  },
+  "objective": {
+    "vitals": {
+      "not_assessed": true
+    },
+    "physical_exam": {
+      "not_documented": true
+    }
+  },
+  "assessment": {
+    "diagnosis": {
+      "primary_diagnosis": "Suspected exercise-induced asthma",
+      "differential_diagnoses": [
+        "Other forms of asthma",
+        "Cardiovascular etiology"
+      ]
+    }
+  },
+  "plan": {
+    "current_medications": {
+      "not_documented": true
+    },
+    "new_prescriptions": {
+      "not_applicable": true
+    },
+    "plan_text": "Referral to a pulmonary specialist for further evaluation and testing to confirm diagnosis and rule out other potential causes."
+  },
+  "alerts": [],
+  "date": "2025-07-26"
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SOAP Note</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+        }
+        h3 {
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .alert {
+            background-color: #fff4e5;
+            border-left: 4px solid #ff9800;
+            padding: 10px;
+            margin: 20px 0;
+        }
+        .alert.high {
+            background-color: #ffebee;
+            border-left: 4px solid #f44336;
+        }
+        .medication {
+            margin-bottom: 8px;
+        }
+        .date {
+            text-align: right;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        .signature {
+            margin-top: 60px;
+            border-top: 1px solid #999;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Clinical SOAP Note</h1>
+    <div class="date">Date: {{date}}</div>
+    
+    <h2>S: Subjective</h2>
+    {% if subjective.chief_complaint %}
+    <h3>Chief Complaint</h3>
+    <p>{{subjective.chief_complaint}}</p>
+    {% endif %}
+    
+    {% if subjective.history_of_present_illness %}
+    <h3>History of Present Illness</h3>
+    <p>{{subjective.history_of_present_illness}}</p>
+    {% endif %}
+    
+    {% if subjective.current_medications %}
+    <h3>Current Medications</h3>
+    <p>{{subjective.current_medications}}</p>
+    {% endif %}
+    
+    <h2>O: Objective</h2>
+    {% if objective.vitals %}
+    <h3>Vitals</h3>
+    <p>
+        {% if objective.vitals.temperature %}Temperature: {{objective.vitals.temperature}}<br>{% endif %}
+        {% if objective.vitals.heart_rate %}Heart Rate: {{objective.vitals.heart_rate}}<br>{% endif %}
+        {% if objective.vitals.blood_pressure %}Blood Pressure: {{objective.vitals.blood_pressure}}<br>{% endif %}
+        {% if objective.vitals.respiratory_rate %}Respiratory Rate: {{objective.vitals.respiratory_rate}}<br>{% endif %}
+        {% if objective.vitals.oxygen_saturation %}O2 Saturation: {{objective.vitals.oxygen_saturation}}{% endif %}
+    </p>
+    {% endif %}
+    
+    {% if objective.physical_exam %}
+    <h3>Physical Examination</h3>
+    <p>{{objective.physical_exam}}</p>
+    {% endif %}
+    
+    <h2>A: Assessment</h2>
+    {% if assessment.diagnosis %}
+    <p>{{assessment.diagnosis}}</p>
+    {% endif %}
+    
+    <h2>P: Plan</h2>
+    {% if plan.current_medications %}
+    <h3>Current Medications</h3>
+    {% for med in plan.current_medications %}
+    <div class="medication">• {{med.name}} {{med.dose}} {{med.frequency}}</div>
+    {% endfor %}
+    {% endif %}
+    
+    {% if plan.new_prescriptions %}
+    <h3>New Prescriptions</h3>
+    {% for med in plan.new_prescriptions %}
+    <div class="medication">• {{med.name}} {{med.dose}} {{med.frequency}}</div>
+    {% endfor %}
+    {% endif %}
+    
+    {% if plan.plan_text %}
+    <h3>Additional Plan</h3>
+    <p>{{plan.plan_text}}</p>
+    {% endif %}
+    
+    {% if alerts %}
+    <h2>Alerts</h2>
+    {% for alert in alerts %}
+    <div class="alert {% if alert.severity == 'high' %}high{% endif %}">
+        <strong>{{alert.severity|capitalize}} Alert:</strong> {{alert.description}}
+    </div>
+    {% endfor %}
+    {% endif %}
+    
+    <div class="signature">
+        <p>Provider Signature: ______________________________ Date: ___________</p>
+    </div>
+</body>
+</html>

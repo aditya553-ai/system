@@ -1,0 +1,18 @@
+{
+  "model": "en_core_sci_md",
+  "entity_categories": [
+    "Symptoms",
+    "Diagnoses",
+    "Medications",
+    "Dosages",
+    "Lab Tests"
+  ],
+  "error_mitigation": {
+    "fuzzy_matching_threshold": 0.8,
+    "lexicon_file": "path/to/medical_jargon_lexicon.txt"
+  },
+  "confidence_scoring": {
+    "min_confidence": 0.75,
+    "flag_low_confidence": true
+  }
+}

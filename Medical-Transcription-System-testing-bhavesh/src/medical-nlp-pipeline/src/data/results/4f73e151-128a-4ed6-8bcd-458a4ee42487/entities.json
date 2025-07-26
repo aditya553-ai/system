@@ -1,0 +1,13 @@
+[
+  {
+    "text": "today",
+    "start": 18,
+    "end": 23,
+    "entity_type": "TEMPORAL",
+    "confidence": 0.7,
+    "method": "spacy",
+    "context": "How are you doing today? I have been having trouble breathing lately. Hav",
+    "preferred_term": "today",
+    "normalized": false
+  }
+]
